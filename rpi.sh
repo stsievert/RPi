@@ -10,11 +10,11 @@ sudo apt-get install cpufrequtils
 # launching x at boot
 cd /etc
     # no login
-sudo sed -E 's/1:2345:respawn:\/sbin\/getty 115200 tty1/1:2345:respawn:\/bin\/login -f pi tty1 <\/dev\/tty1 >\/dev\/tty1  2>\&1/g' inittab
+sudo sed -i -E 's/1:2345:respawn:\/sbin\/getty 115200 tty1/1:2345:respawn:\/bin\/login -f pi tty1 <\/dev\/tty1 >\/dev\/tty1  2>\&1/g' inittab
 
     # startx
-sudo sed -E 's/exit 0//g' rc.local
-sudo echo su -l pi -c startx >> rc.local
+sudo sed -i -E  's/exit 0//g' rc.local
+sudo echo su  pi -c startx >> rc.local
 sudo echo exit 0 >> rc.local
 
 
