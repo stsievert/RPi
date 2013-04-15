@@ -84,7 +84,8 @@ class MainWindow(QtGui.QMainWindow):
         self.tab_widget.tabBar().setVisible(False)
         # prevent focus in tab bar
         self.tab_widget.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.toggle.fullScreen()
+        # below added by Scott Sievert 2013-04-13
+        self.toggleFullScreen()
 
 
 

@@ -28,17 +28,44 @@ sudo apt-get install cpufrequtils
 
 ## changing the font size and editor
 # cd 
-#cd ~/.config/ipython/
+ipython profile create
+#cd ~/.config/ipython/profile_default
 #sed 's/# c.FontSize = 0/c.FontSize = 20/' ipython_qtconsole.py >> ipython_qtconsole.py
+# sed 's/# c.IPythonWidget.font_size = 0/c.IPythonWidget.font_size = 20/' -i ipython_qtconsole_config.py
 
 ## setting the cpufreq
 echo sudo cpufreq-set -u 700MHz
 echo sudo cpufreq-set -d 50MHz
 
 ## setting the full screen.
-#cd /usr/lib/python2.7/dist-packages/IPython/frontend/qt/console
+cd /usr/lib/python2.7/dist-packages/IPython/frontend/qt/console
 sudo cp mainwindow.py mainwindow.py.old
 
 # for some reason, this works and sudo doesn't
 sudo su
 sudo curl https://raw.github.com/scottsievert/RPi/master/mainwindow.py >> mainwindow.py
+
+# for SD card setup...
+#   sudo diskutil unmount /dev/disk1s1
+#   sudo dd bs=1m if=2013... of=/dev/rdisk1
+#   sudo diskutil eject /dev/rdisk1
+# then...
+#   say "expand root_fs" in config menu  (sudo raspi-config)
+#   change keyboard layout
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
